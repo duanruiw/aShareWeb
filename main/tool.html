@@ -30,9 +30,9 @@
         const input = button.parentNode.querySelector('input');
         input.value = '';
     }
-    // window.onload = function() {
-    //     document.getElementById("validationDefault01").focus();
-    // };
+    window.onload = function() {
+        document.getElementById("validationDefault01").focus();
+    };
 </script>
 <body>
 <main class="d-flex justify-content-center align-items-center vh-100">
@@ -47,7 +47,6 @@
                        inputmode="numeric"
                        value="25.213"
                        oninput="calculatePurchaseQuantity()"
-                       autofocus
                        required>
                 <button class="btn btn-secondary" type="button" onclick="clearInputValue(this);">
                     <span aria-hidden="true">&times;</span>
