@@ -22,8 +22,13 @@
         const purchaseQuantity = Math.floor(purchaseAmount / currentPrice);
         inputField.value = purchaseQuantity;
         const percentageIncrease = parseFloat(document.getElementById("validationDefault04").value);
-        const sellingPercentage  = currentPrice * (100 + percentageIncrease) / 100;
-        document.getElementById("validationDefault05").value = sellingPercentage ;
+        const sellingPercentage = currentPrice * (100 + percentageIncrease) / 100;
+        document.getElementById("validationDefault05").value = sellingPercentage;
+    }
+
+    function clearInputValue(button) {
+        const input = button.parentNode.querySelector('input');
+        input.value = '';
     }
 </script>
 <body>
@@ -33,30 +38,45 @@
             <div class="col-12 input-group">
                 <label for="validationDefault01" class="input-group-text">现价</label>
                 <input type="number" min="0" step="0.01" class="form-control" id="validationDefault01"
+                       inputmode="numeric"
                        value="25.213"
                        oninput="calculatePurchaseQuantity()"
                        required>
+                <button class="btn btn-secondary" type="button" onclick="clearInputValue(this);">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="col-12 input-group">
                 <label for="validationDefault02" class="input-group-text">购买金额</label>
                 <input type="number" min="0" step="1" class="form-control" id="validationDefault02"
+                       inputmode="numeric"
                        value="5000"
                        oninput="calculatePurchaseQuantity()"
                        required>
+                <button class="btn btn-secondary" type="button" onclick="clearInputValue(this);">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="col-12 input-group">
                 <label for="validationDefault03" class="input-group-text">购买数量</label>
                 <input type="number" min="0" step="1" class="form-control" id="validationDefault03"
                        disabled="disabled"
                        required>
+                <button class="btn btn-secondary" type="button" onclick="clearInputValue(this);">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="col-12 input-group">
                 <label for="validationDefault04" class="input-group-text">盈利</label>
                 <input type="number" class="form-control" aria-label="Percentage" id="validationDefault04"
+                       inputmode="numeric"
                        value="5" min="0" step="1"
                        oninput="calculatePurchaseQuantity()"
                        required>
                 <span class="input-group-text">%</span>
+                <button class="btn btn-secondary" type="button" onclick="clearInputValue(this);">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="col-12 input-group">
                 <label for="validationDefault05" class="input-group-text">卖出价</label>
@@ -64,6 +84,9 @@
                        oninput="calculatePurchaseQuantity()"
                        disabled="disabled"
                        required>
+                <button class="btn btn-secondary" type="button" onclick="clearInputValue(this);">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
         </form>
     </div>
