@@ -52,7 +52,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="col-12 input-group">
+            <div class="col-12 input-group" hidden="hidden">
                 <label for="validationDefault02" class="input-group-text">购买金额</label>
                 <input type="number" min="0" step="1" class="form-control" id="validationDefault02"
                        inputmode="numeric"
@@ -63,7 +63,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="col-12 input-group">
+            <div class="col-12 input-group" hidden="hidden">
                 <label for="validationDefault03" class="input-group-text">购买数量</label>
                 <input type="number" min="0" step="1" class="form-control" id="validationDefault03"
                        disabled="disabled"
@@ -76,7 +76,7 @@
                 <label for="validationDefault04" class="input-group-text">盈利</label>
                 <input type="number" class="form-control" aria-label="Percentage" id="validationDefault04"
                        inputmode="numeric"
-                       value="5" min="0" step="1"
+                       value="0.5" min="0" step="0.1"
                        oninput="calculatePurchaseQuantity()"
                        required>
                 <span class="input-group-text">%</span>
